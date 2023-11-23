@@ -1,0 +1,28 @@
+<div class="field {{#if disabled}}field--disabled{{/if}}">
+    <label for="{{name}}" class="field__label">{{label}}</label>
+    <input type="{{#if type}}{{type}}{{/if}}" value="{{#if value}}{{value}}{{/if}}" name="{{#if name}}{{name}}{{/if}}"
+        class="field__input">
+</div>
+
+<style>
+    .field {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        width: 100%;
+    }
+
+    .field__label {
+        font-size: 14px;
+    }
+
+    .field__input {
+        border: 1px solid grey;
+        padding: 10px;
+    }
+
+    .field--disabled {
+        position: absolute;
+        display: none;
+    }
+</style>

@@ -1,0 +1,12 @@
+.product-info__button {
+  background-color: blue;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+/*# sourceMappingURL=style.css.map */
