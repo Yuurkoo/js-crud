@@ -1,0 +1,88 @@
+.main{
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(3, 0.2fr);
+    padding: 20px;
+}
+
+.card {
+    width: 100%;
+    padding: 1rem;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, .05);
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+//   .card:hover{
+//     transform: translateY(0.2em);
+//     transition: 0.5s;
+//   }
+  
+  
+  .title {
+    font-weight: 600;
+    font-size: 18px;
+    color: rgb(31 41 55);
+  }
+  
+  .description {
+    margin-top: 8px;
+    font-size: 16px;
+    line-height: 1.25rem;
+    color: rgb(75 85 99);
+  }
+
+  .indentify{
+    margin-top:10px;
+    color: grey;
+  }
+  
+  .description a {
+    color: rgb(59 130 246);
+  }
+  
+  .description a:hover {
+    -webkit-text-decoration-line: underline;
+    text-decoration-line: underline;
+  }
+  
+  .actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 5px;
+
+  }
+  
+  .pref {
+    font-size: 18px;
+    font-weight: bold;
+    color: rgb(31 41 55 );
+    transition: all .3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .pref:focus {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+  }
+  
+  .accept {
+    font-size: 16px;
+    font-weight: 500;
+    color: rgb(0, 102, 255);
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.625rem;
+    padding-bottom: 0.625rem;
+    transition: all .15s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .accept:hover{
+    color: rgb(4, 4, 200);
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  
