@@ -39,11 +39,12 @@
 
     <div class="divider"></div>
 
-    {{> field value=totalPrice name=totalPrice disabled=true}}
-    {{> field value=productPrice name=productPrice disabled=true}}
-    {{> field value=deliveryPrice name=deliveryPrice disabled=true}}
+    {{> field value=totalPrice name='totalPrice' disabled=true}}
+    {{> field value=productPrice name='productPrice' disabled=true}}
+    {{> field value=deliveryPrice name='deliveryPrice' disabled=true}}
+    {{> field value=amount name='amount' disabled=true}}
 
-    <strong class="form-cart__total">Всього: {{totalPrice}}</strong>
+    <strong class="form-cart__total">Всього: {{totalPrice}}грн | ({{bonus}} грн бонусів)</strong>
 
     {{>button text="Оформити замовлення"}}
   </form>

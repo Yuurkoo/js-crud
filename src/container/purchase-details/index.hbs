@@ -1,0 +1,40 @@
+<main class="main">
+  {{#with data}}
+  <form method="POST" action="/purchase-edit" class="form-card">
+    {{> heading title='Інформація про замовлення'}}
+
+    <div class="divider"></div>
+    <style>
+      .divider {
+        width: 100%;
+        height: 1px;
+        background-color: gray;
+      }
+    </style>
+
+    {{> field label="Ім'я" name="firstname"}}
+
+    {{> field label="Прізвище" name="lastname"}}
+
+    <div class="divider"></div>
+
+    {{> field label="Назва товару" name="name"}}
+
+    {{> field label="Коментар" name="comment"}}
+
+    <div class="divider"></div>
+
+    {{> field label="Варітість доставки" name="delivery"}}
+
+    {{> field label="Нарахований бонус" name="bonus"}}
+
+    {{> field label="Вартість товару" name="price"}}
+
+    {{> field label="Сума до сплати" name="price"}}
+
+
+    {{>button text="Змінити дані"}}
+  </form>
+  {{/with}}
+
+</main>
