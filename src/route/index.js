@@ -433,13 +433,92 @@ router.post('/purchase-submit', function (req, res) {
 })
 // ================================================================
 router.get('/purchase-details', function (req, res) {
-  // console.log(req.body)
+  // res.render генерує нам HTML сторінку
+  const id = Number(req.query.id)
+  const purchase = Purchase.getById(id)
+  const bonus = Purchase.calcBonusAmount(
+    purchase.totalPrice,
+  )
 
+  console.log('purchase:', purchase, bonus)
+
+  // ↙️ cюди вводимо назву файлу з сontainer
   res.render('purchase-details', {
     // вказуємо назву папки контейнера, в якій знаходяться наші стилі
     style: 'purchase-details',
-    data: {},
+    component: ['heading', 'divider', 'button'],
+
+    data: {
+      id: purchase.id,
+      firstname: purchase.firstname,
+      lastname: purchase.lastname,
+      phone: purchase.phone,
+      email: purchase.email,
+      delivery: purchase.delivery,
+      product: purchase.product.title,
+      productPrice: purchase.productPrice,
+      deliveryPrice: purchase.deliveryPrice,
+      totalPrice: purchase.totalPrice,
+      bonus: bonus,
+    },
   })
+  // ↑↑ сюди вводимо JSON дані
 })
+// ================================================================
+// ================================================================
+router.post('/purchase-edit', function (req, res) {
+  // res.render генерує нам HTML сторінку
+
+  const id = Number(req.query.id)
+  const purchase = Purchase.getById(id)
+  const bonus = Purchase.calcBonusAmount(
+    purchase.totalPrice,
+  )
+
+  console.log('purchase:', purchase, bonus)
+
+  // ↙️ cюди вводимо назву файлу з сontainer
+  res.render('purchase-edit', {
+    // вказуємо назву папки контейнера, в якій знаходяться наші стилі
+    style: 'purchase-edit',
+    data: {
+      id: purchase.id,
+      firstname: purchase.firstname,
+      lastname: purchase.lastname,
+      phone: purchase.phone,
+      email: purchase.email,
+      delivery: purchase.delivery,
+      product: purchase.product.title,
+      productPrice: purchase.productPrice,
+      deliveryPrice: purchase.deliveryPrice,
+      totalPrice: purchase.totalPrice,
+      bonus: bonus,
+    },
+  })
+  // ↑↑ сюди вводимо JSON дані
+})
+
+// ================================================================
+router.post('/purchase-update', function (req, res) {
+  // res.render генерує нам HTML сторінку
+
+  const { firstname, lastname, phone, email } = req.body
+
+  console.log(firstname, lastname, phone, email)
+
+  // ↙️ cюди вводимо назву файлу з сontainer
+  res.render('alert', {
+    // вказуємо назву папки контейнера, в якій знаходяться наші стилі
+    style: 'alert',
+    data: {
+      message: 'Успішно',
+      info: 'Замовлення створено',
+      link: `/`,
+    },
+  })
+  // ↑↑ сюди вводимо JSON дані
+})
+// ================================================================
+
 // Підключаємо роутер до бек-енду
 module.exports = router

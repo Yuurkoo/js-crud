@@ -1,39 +1,68 @@
 <main class="main">
   {{#with data}}
-  <form method="POST" action="/purchase-edit" class="form-card">
+
+  <form method="POST" action="/purchase-edit?id={{id}}" class="info_area">
     {{> heading title='Інформація про замовлення'}}
 
     <div class="divider"></div>
-    <style>
-      .divider {
-        width: 100%;
-        height: 1px;
-        background-color: gray;
-      }
-    </style>
 
-    {{> field label="Ім'я" name="firstname"}}
+    <div class='purchase-item block'>
+      <span class='title'>ID:</span>
+      <span class='text'>{{id}}</span>
+    </div>
 
-    {{> field label="Прізвище" name="lastname"}}
+    <div class='purchase-item'>
+      <div class="purchase-item_block">
+        <span class='title'>Ім'я:</span>
+        <span class='text'>{{firstname}}</span>
+      </div>
+
+      <div class='purchase-item_block'>
+        <span class='title'>Прізвище:</span>
+        <span class='text'>{{lastname}}</span>
+      </div>
+    </div>
+
+    <div class='purchase-item'>
+      <div class="purchase-item_block">
+        <span class='title'>Tелефон:</span>
+        <span class='text'>{{phone}}</span>
+      </div>
+
+      <div class='purchase-item block'>
+        <span class='title'>Електpoннa noштa:</span>
+        <span class='text'>{{email}}</span>
+      </div>
+    </div>
+
+    <div class='purchase-item'>
+      <div class="purchase-item__block">
+        <span class='title'>Назва товару:</span>
+        <span class='text'>{{product}}</span>
+      </div>
+    </div>
 
     <div class="divider"></div>
 
-    {{> field label="Назва товару" name="name"}}
+    <div class='purchase-item'>
+      <div class='purchase-item block'>
+        <span class='title'>Вартість товару:</span>
+        <span class='text'>{{productPrice}} грн</span>
+      </div>
 
-    {{> field label="Коментар" name="comment"}}
+      <div class='purchase-item block'>
+        <span class='title'>Вартість доставки:</span>
+        <span class='text'>{{deliveryPrice}} грн</span>
+      </div>
 
-    <div class="divider"></div>
-
-    {{> field label="Варітість доставки" name="delivery"}}
-
-    {{> field label="Нарахований бонус" name="bonus"}}
-
-    {{> field label="Вартість товару" name="price"}}
-
-    {{> field label="Сума до сплати" name="price"}}
-
+      <div class='purchase-item block'>
+        <span class='title'>Загальна вартість:</span>
+        <span class='text'>{{totalPrice}} грн</span>
+      </div>
+    </div>
 
     {{>button text="Змінити дані"}}
+
   </form>
   {{/with}}
 
