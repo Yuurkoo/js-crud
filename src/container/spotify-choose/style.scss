@@ -1,0 +1,22 @@
+@use '../../lib/service.scss' as s;
+
+@use '../../lib/spotify.scss' as spotify;
+
+
+.choose{
+    display: grid;
+    gap: s.space(6);
+}
+
+.choose__item{
+    display: grid;
+    gap: s.space(6);
+    grid-template-columns: 56px 1fr;
+}
+
+.choose__content{
+ display:flex;
+ flex-direction: column;
+ justify-content: center;
+ gap: s.space(3);
+}
