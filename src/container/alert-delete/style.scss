@@ -1,0 +1,50 @@
+.main{
+    display: flex;
+    flex-direction: column;
+}
+
+.form{
+    display: flex;
+    justify-content:space-between;
+    padding: 15px;
+    max-width:700px;
+    border:  1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+    &__container{
+        width: 100%;
+    }
+
+    &__title{
+        font-size:20px;
+        font-weight: bold;
+    }
+    &__text{
+        margin-top:10px;
+    }
+
+    &__button{
+        display: flex;
+        justify-content: flex-end;
+        background-color: rgb(0, 102, 255);
+        width: 200px;
+        padding: 10px;
+        align-items: center;
+        border: 1px solid transparent;
+        border-radius:4px;
+        text-align: center;
+    }
+
+    &__button:hover{
+        opacity: 0.7;
+        transition: 0.5s;
+    }
+
+    &__button_text{
+        
+        text-align: center;
+        text-decoration: none;
+        color: white;
+    }
+}

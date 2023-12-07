@@ -1,0 +1,26 @@
+<main class="main">
+  {{#with data}}
+  <h1>Мої замовлення</h1>
+
+  <div class="catalog">
+    <span class="catalog_id">ID: {{id}}</span>
+
+    <div class="catalog_info">Товари
+      <p> {{name}}</p>
+    </div>
+
+    <div class="catalog_info">Сума замовлення
+      <p> {{totalPrice}}</p>
+    </div>
+
+    <div class="catalog_info">Нараховані бонуси
+      <p> {{bonus}}</p>
+    </div>
+
+    <a href="/purchase-details?id={{id}}">деталі</a>
+
+  </div>
+  <div class="divider"></div>
+  {{/with}}
+
+</main>
