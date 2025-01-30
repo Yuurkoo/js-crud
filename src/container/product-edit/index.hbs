@@ -1,0 +1,56 @@
+<div class="main">
+  <section>
+    <h1 class="product_title">Редагування товару</h1>
+    <div class="product_card">
+      <div class="form">
+        <div>
+          <h2 class="form_title">Інформація про товар</h2>
+        </div>
+
+        <form method="POST" action="/product-create">
+
+          <div class="form_field_block">
+            <div class="form_field">
+              <label for='name' for="" class="product_name">Назва товару</label>
+              <input type="text" name="name">
+            </div>
+
+            <div class="form_field">
+              <label for='price' class="product_price">Ціна</label>
+              <input type="text" name="price">
+            </div>
+
+            <div class="form_field">
+              <label for='id' class="product_id">ID</label>
+              <input type="text" name="id">
+            </div>
+          </div>
+
+          <div class="textarea_field">
+            <label class="area_title">Короткий опис товару</label>
+            <textarea for="short-description" name="description" rows="5" cols="33"></textarea>
+
+            <p class="under_area_text">Відображається у картці товару</p>
+          </div>
+
+          <div class="product_generate">
+            <button class="product_update">
+              <form method="POST" action="/product-update">
+                <p class="form_upd">Зберегти оновлення</p>
+              </form>
+              <style>
+                .form_upd {
+                  color: white;
+                }
+              </style>
+
+            </button>
+            <button class="product_delete">
+              <a class="button_text" href="/product-delete">Видалити товар</a>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+</div>

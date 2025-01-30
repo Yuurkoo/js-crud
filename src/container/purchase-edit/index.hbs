@@ -1,0 +1,45 @@
+<main class="main">
+  {{#with data}}
+
+  <form method="POST" action="/purchase-update" class="info_area">
+    {{> heading title='Інформація про замовлення'}}
+
+    <div class="divider"></div>
+
+    <div class='purchase-item block'>
+      <label class='title'>ID:</label>
+      <span class='text'>{{id}}</span>
+    </div>
+
+    <div class='purchase-item'>
+      <div class="purchase-item_block">
+        <label class='title'>Ім'я:</label>
+        <input type="text" class='text' placeholder={{firstname}}></input>
+      </div>
+
+      <div class='purchase-item_block'>
+        <label class='title'>Прізвище:</label>
+        <input type="text" class='text' placeholder={{lastname}}></input>
+      </div>
+    </div>
+
+    <div class='purchase-item'>
+      <div class="purchase-item_block">
+        <label class='title'>Tелефон:</label>
+        <input type="text" class='text' placeholder={{phone}}></input>
+      </div>
+
+      <div class='purchase-item block'>
+
+        <label class='title'>Електpoннa noштa:</label>
+        <input type="text" class='text' placeholder={{email}}></input>
+      </div>
+    </div>
+
+
+    {{> button text="Зберегти та формити"}}
+
+  </form>
+  {{/with}}
+
+</main>

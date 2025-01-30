@@ -1,0 +1,49 @@
+@use '../../lib/service.scss' as s;
+
+@use '../../component/heading/style.scss' as heading;
+@use '../../component/purchase-product/style.scss' as purchaseProduct;
+
+
+.main{
+    display:flex;
+    flex-direction:column;
+    gap: s.space(10);
+    padding: s.space(10);
+
+    h1{
+      font-size:34px;
+      color: blue;
+      font-weight: bold;
+      padding-left: 20px;
+    }
+
+    .catalog{
+      display: flex;
+      justify-content: space-around;
+    }
+
+    .catalog_info{
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .divider{
+      width: 100%;
+      height: 1px;
+      background-color: grey;
+    }
+
+    .catalog_info, .catalog_id{
+      color: grey;
+    }
+
+    p{
+      color: black;
+    }
+    
+    a{
+      text-decoration: none;
+    }
+}
+

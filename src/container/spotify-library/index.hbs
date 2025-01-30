@@ -1,0 +1,60 @@
+<main class="main">
+  <div class="main__content">
+    <div class="choice">
+      <h1 class="title">Моя бібліотека</h1>
+      <div class="choice__choice">
+        <ul class="choose">
+          <a href="/spotify-search">
+            <li class="choose__item">
+              <img src="/img/svg/search.svg" alt="" height="30px">
+            </li>
+          </a>
+        </ul>
+        <ul class="choose">
+          <a href="/spotify-choose">
+            <li class="choose__item">
+              <img src="/img/svg/add.svg" alt="">
+            </li>
+          </a>
+        </ul>
+      </div>
+    </div>
+
+
+    <div class="playlist">
+
+      <div class="main__playlist-group">
+        <div class="playlist-1">
+          <img src="{{data.img}}" alt="">
+
+          <p class="">Пісні, що сподобались</p>
+          <p class="amount"> пісень: {{data.amount}}</p>
+        </div>
+      </div>
+      <div class="main__playlist-group">
+        <div class="playlist-1">
+          <img src="{{data.img}}" alt="">
+
+          <p class="">Спільний альбом</p>
+          <p class="amount"> пісень: {{data.amount}}</p>
+        </div>
+      </div>
+      <div class="main__playlist-group">
+        <div class="playlist-1">
+          <img src="{{data.img}}" alt="">
+
+          <p class="">Інь Ян</p>
+          <p class="amount"> пісень: {{data.amount}}</p>
+        </div>
+      </div>
+      <div class="main__playlist-group">
+        <div class="playlist-1">
+          <img src="{{data.img}}" alt="">
+
+          <p class="">Мій плейліст №1</p>
+          <p class="amount"> пісень: {{data.amount}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

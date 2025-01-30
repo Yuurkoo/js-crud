@@ -1,0 +1,152 @@
+{{!
+Це код container файлу для index сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/"
+}}
+
+<div class="main">
+  <section>
+    <h1 class="product_title">Створення товару</h1>
+    <div class="product_card">
+      <div class="form">
+        <div>
+          <h2 class="form_title">Інформація про товар</h2>
+        </div>
+
+        <form method="POST" action="/product-create">
+
+          <div class="form_field_block">
+            <div class="form_field">
+              <label for='name' for="" class="product_name">Назва товару</label>
+              <input type="text" name="name">
+            </div>
+
+            <div class="form_field">
+              <label for='price' class="product_price">Ціна</label>
+              <input type="text" name="price">
+            </div>
+          </div>
+
+          <div class="textarea_field">
+            <label class="area_title">Короткий опис товару</label>
+            <textarea for="short-description" name="description" rows="5" cols="33"></textarea>
+
+            <p class="under_area_text">Відображається у картці товару</p>
+          </div>
+
+
+
+          <button class="product_create">
+            <p class="button_text">Створити товар</p>
+          </button>
+
+
+        </form>
+      </div>
+
+    </div>
+  </section>
+</div>
+
+<div class="">
+  <div class="product_list">
+    <h2 class="product_title">Спсисок створених товарів</h2>
+    {{#with data.products}}
+    {{#if isEmpty}}
+    <p class="list_info">Наразі список пустий <span>(створіть товар)</span></p>
+    {{else}}
+
+    <div class="main_card">
+      {{#each list}}
+      <div class="card">
+        {{>product-card}}
+      </div>
+      {{/each}}
+    </div>
+
+
+    <style>
+      .main_card {
+        display: grid;
+        gap: 30px;
+        grid-template-columns: repeat(3, 0.2fr);
+        padding: 20px;
+      }
+
+      .card {
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        border-radius: 8px;
+      }
+
+
+      .title {
+        font-weight: 600;
+        font-size: 18px;
+        color: rgb(31 41 55);
+      }
+
+      .description {
+        margin-top: 8px;
+        font-size: 16px;
+        line-height: 1.25rem;
+        color: rgb(75 85 99);
+      }
+
+      .indentify {
+        margin-top: 10px;
+        color: grey;
+      }
+
+      .actions {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 5px;
+
+      }
+
+      .pref {
+        font-size: 18px;
+        font-weight: bold;
+        color: rgb(31 41 55);
+        transition: all .3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .pref:focus {
+        outline: 2px solid transparent;
+        outline-offset: 2px;
+      }
+
+      .accept {
+        font-size: 16px;
+        font-weight: 500;
+        color: rgb(0, 102, 255);
+        padding-left: 1rem;
+        padding-right: 1rem;
+        padding-top: 0.625rem;
+        padding-bottom: 0.625rem;
+        transition: all .15s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .accept:hover {
+        color: rgb(4, 4, 200);
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    </style>
+
+
+    {{/if}}
+    {{/with}}
+  </div>
+</div>
+
+{{!
+Цей код містить лише те, що буде виводитись в
+
+<body>
+  Адже наш layout/default.hbs має вже структуру HTML
+  }}
